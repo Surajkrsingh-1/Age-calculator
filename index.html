@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>AgeWizard - Calculate Your Age Quickly and Easily</title>
+    <meta name="description" content="Calculate your age quickly and easily with this free online age calculator. Simply enter your birthdate and click Calculate Age.">
+    <meta name="keywords" content="age calculator, online age calculator, free age calculator, calculate age">
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.example.com/age-calculator/">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+      
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      
+      label {
+        display: block;
+        margin: 20px 0 5px 0;
+        font-size: 18px;
+        color: #333;
+      }
+      
+      input[type="date"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+      }
+      
+      button {
+        display: block;
+        margin: 20px 0 0 0;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: #3e8e41;
+      }
+      
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Free Online Age Calculator</h1>
+    </header>
+    <main>
+      <form>
+        <label for="birthdate">Enter your birthdate:</label>
+        <input type="date" id="birthdate">
+        <button type="button" onclick="calculateAge()">Calculate Age</button>
+        <p id="result"></p>
+      </form>
+    </main>
+    <footer>
+      <p>&copy; 2023 Age . All rights reserved.</p>
+    </footer>
+    <script>
+      function calculateAge() {
+        const birthdate = new Date(document.getElementById("birthdate").value);
+        const now = new Date();
+        const ageInMilliseconds = now - birthdate;
+        const ageInYears = Math.floor(ageInMilliseconds / 31536000000);
+        document.getElementById("result").innerHTML = "Your age is " + ageInYears + " years.";
+      }
+    </script>
+  </body>
+</html>
